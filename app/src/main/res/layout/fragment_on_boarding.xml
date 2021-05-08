@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ui.onboarding.OnBoardingFragment">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerOnboarding"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/pageIndicatorView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.rd.PageIndicatorView
+        android:id="@+id/pageIndicatorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:piv_animationType="worm"
+        app:piv_dynamicCount="true"
+        app:piv_interactiveAnimation="true"
+        app:piv_selectedColor="@color/teal_700"
+        app:piv_unselectedColor="@color/purple_200"
+        app:piv_viewPager="@id/viewPagerOnboarding" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonSkip"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="GEÇ"
+        android:textAllCaps="false"
+        app:icon="@drawable/ic_baseline_arrow_forward_24"
+        app:iconGravity="end"
+        app:layout_constraintBottom_toBottomOf="@+id/pageIndicatorView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pageIndicatorView"
+        app:strokeColor="@color/purple_700" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

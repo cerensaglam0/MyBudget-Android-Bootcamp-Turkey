@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="onBoarding"
+            type="com.saglamceren.mybudget.ui.onboarding.OnBoardingItem" />
+
+        <import type="androidx.core.content.ContextCompat" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewOnBoarding"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="64dp"
+            android:adjustViewBounds="true"
+            android:src="@{ContextCompat.getDrawable(context,onBoarding.image)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewTitleOnBoarding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@{onBoarding.title}"
+            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewOnBoarding" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewDescriptionOnBoarding"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@{onBoarding.textDescription}"
+            android:textAppearance="?textAppearanceBody2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitleOnBoarding" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

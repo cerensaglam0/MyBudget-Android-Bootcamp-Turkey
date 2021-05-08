@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.saglamceren.mybudget.data.local.model.Spending" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewRecyclerView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/background_spending_item_icon"
+                android:backgroundTint="@color/deep_purple_800_20"
+                android:padding="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_shopping_cart"
+                app:tint="@color/deep_purple_800" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNameRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="@{data.description}"
+                android:textColor="@color/black_1212"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageViewRecyclerView"
+                app:layout_constraintEnd_toStartOf="@id/textViewMoneyRecyclerView"
+                app:layout_constraintStart_toEndOf="@id/imageViewRecyclerView"
+                app:layout_constraintTop_toTopOf="@id/imageViewRecyclerView"
+                tools:text="Ayakkabı" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewMoneyRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/textViewNameRecyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textViewNameRecyclerView"
+                tools:text="7$" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray_100"
+                app:layout_constraintTop_toBottomOf="@id/imageViewRecyclerView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

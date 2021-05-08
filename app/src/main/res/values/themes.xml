@@ -1,0 +1,30 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyBudget" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Custom Toolbar Style  -->
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="RadioButton.CurrencyRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/background_currency_radio_button_item</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@drawable/currency_radio_button_text_color</item>
+    </style>
+
+</resources>

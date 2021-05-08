@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarSpendingAdding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        app:title="Harcama Ekle"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/grey" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/page_large_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/page_large_margin" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputLayoutDescSpendingAdding"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="Açıklama"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/toolBarSpendingAdding">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextDescSpendingAdding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:id="@+id/textInputLayoutSpendingSpendingAdding"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Harcama"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayoutDescSpendingAdding">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextSpendingSpendingAdding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupSpendingNameChoosing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayoutSpendingSpendingAdding">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonBillSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fatura" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonRentSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kira" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonOtherSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diğer" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/radioGroupMoneyChoosing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupSpendingNameChoosing">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonTLSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="TL" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonDolarSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Dolar" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonEuroSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Euro" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radiobuttonSterlinSpendingAdding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sterlin" />
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonAddingSpendingAdding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="EKLE"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupMoneyChoosing"
+        app:layout_constraintVertical_bias="1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

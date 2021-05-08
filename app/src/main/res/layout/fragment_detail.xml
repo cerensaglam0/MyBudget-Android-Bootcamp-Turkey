@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.saglamceren.mybudget.ui.detail.DetailViewModel" />
+
+        <import type="androidx.core.content.ContextCompat" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/background_detail_fragment"
+            android:backgroundTint="@{ContextCompat.getColor(context,viewModel.colorLiveData)}"
+            app:layout_constraintHeight_percent=".25"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewDetail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/background_spending_item_icon"
+            android:backgroundTint="@{ContextCompat.getColor(context,viewModel.iconBackgroundLiveData)}"
+            android:padding="24dp"
+            android:src="@{ContextCompat.getDrawable(context,viewModel.iconLiveData)}"
+            android:translationY="50dp"
+            app:layout_constraintBottom_toBottomOf="@id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white"
+            tools:src="@drawable/ic_shopping_cart" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewNameRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="@{viewModel.spendingLiveData.description}"
+            android:textColor="@color/black_1212"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/textViewMoneyRecyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Ayakkabı" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewMoneyRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{viewModel.moneyTextLiveData}"
+            android:textColor="@color/black_1212"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/imageViewDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNameRecyclerView"
+            tools:text="7$" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:foregroundTint="@color/purple_200"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_chart"
+            app:layout_constraintBottom_toTopOf="@+id/materialButtonDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            app:maxFromDouble="@{viewModel.totalSpendingLiveData}"
+            app:progressFromDouble="@{viewModel.spendingLiveData.money}"
+            tools:max="50"
+            tools:progress="20" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewPercentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"%" +  String.format("%.0f", (viewModel.spendingLiveData.money * 100) / viewModel.totalSpendingLiveData)}'
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/progressBar"
+            app:layout_constraintEnd_toEndOf="@id/progressBar"
+            app:layout_constraintStart_toStartOf="@id/progressBar"
+            app:layout_constraintTop_toTopOf="@id/progressBar"
+            tools:text="%80" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButtonDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp"
+            android:backgroundTint="@{ContextCompat.getColor(context,viewModel.iconBackgroundLiveData)}"
+            android:text="SİL"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
